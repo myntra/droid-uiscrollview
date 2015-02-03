@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DroidUIScrollView">
+        <!-- Defines whether the DroidUIScrollView should stretch its content to fill the viewport. -->
+        <attr name="fillViewport" format="boolean"/>
+    </declare-styleable>
+</resources>

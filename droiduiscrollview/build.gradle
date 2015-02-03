@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 21
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+task installArchives(type: Upload) {
+    description "Installs the artifacts to the local Maven repository."
+    repositories.mavenInstaller {
+        configuration = configurations.default
+        pom.groupId = 'com.greycellofp'
+        pom.artifactId = 'DroidUIScrollView'
+        pom.version = '1.0.0-SNAPSHOT'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.0.3'
+}
