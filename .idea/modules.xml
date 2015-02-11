@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DroidUIScrollView.iml" filepath="$PROJECT_DIR$/DroidUIScrollView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/droiduiscrollview/droiduiscrollview.iml" filepath="$PROJECT_DIR$/droiduiscrollview/droiduiscrollview.iml" />
     </modules>
   </component>
