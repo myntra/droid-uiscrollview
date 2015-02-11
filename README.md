@@ -3,12 +3,6 @@
 
 An attempt at a ScrollView that scrolls both vertically and horizontally. A UI widget that is readily available for iOS, aptly named [UIScrollView]
 
-This is not published to a central repo yet, but you could build it locally and install to your local Maven repository
-
-```sh
-$ gradle installArchives
-```
-
 ##Gradle Dependency
 
 Add this in your project app's ```build.gradle```
@@ -18,7 +12,13 @@ dependencies{
     compile 'com.greycellofp:DroidUIScrollView:1.0.0-SNAPSHOT'
 }
 ```
+###Build Caveat
+This is not published to a central repo yet, but you could build it locally and install to your local Maven repository
 
+```sh
+$ gradle installArchives
+```
+You'd have to first comment out the gradle dependency in the demo(app) module before you ```installArchives```
 ### Version
 1.0.0
 
