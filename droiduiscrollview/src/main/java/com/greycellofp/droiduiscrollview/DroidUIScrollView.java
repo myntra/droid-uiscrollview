@@ -699,7 +699,6 @@ public class DroidUIScrollView extends FrameLayout {
                     final int unconsumedY = deltaY - scrolledDeltaY;
                     final int scrolledDeltaX = getScrollX() - oldX;
                     final int unconsumedX = deltaX - scrolledDeltaX;
-                    //God! I hate android! :/
 //                    if (dispatchNestedScroll(scrolledDeltaX, scrolledDeltaY, unconsumedX, unconsumedY, mScrollOffset)) {
 //                        mLastMotionY -= mScrollOffset[1];
 //                        mLastMotionX -= mScrollOffset[0];
