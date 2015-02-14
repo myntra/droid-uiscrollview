@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -753,7 +754,11 @@ public class DroidUIScrollView extends FrameLayout {
                         flingWithNestedDispatch(-initialVelocityX, -initialVelocityY);
                     } else if (mScroller.springBack(getScrollX(), getScrollY(), 0, getScrollRangeHorizontal(), 0,
                             getScrollRangeVertical())) {
-                        postInvalidateOnAnimation();
+                        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                            postInvalidateOnAnimation();
+                        }else{
+                            ViewCompat.postInvalidateOnAnimation(this);
+                        }
                     }
 
                     mActivePointerId = INVALID_POINTER;
@@ -763,7 +768,11 @@ public class DroidUIScrollView extends FrameLayout {
             case MotionEvent.ACTION_CANCEL:
                 if (mIsBeingDragged && getChildCount() > 0) {
                     if (mScroller.springBack(getScrollX(), getScrollY(), 0, getScrollRangeHorizontal(), 0, getScrollRangeVertical())) {
-                        postInvalidateOnAnimation();
+                        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                            postInvalidateOnAnimation();
+                        }else{
+                            ViewCompat.postInvalidateOnAnimation(this);
+                        }
                     }
                     mActivePointerId = INVALID_POINTER;
                     endDrag();
@@ -823,7 +832,11 @@ public class DroidUIScrollView extends FrameLayout {
 //                newFocused.requestFocus(movingRight ? View.FOCUS_RIGHT : View.FOCUS_LEFT);
 //            }
 
-            postInvalidateOnAnimation();
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                postInvalidateOnAnimation();
+            }else{
+                ViewCompat.postInvalidateOnAnimation(this);
+            }
         }
     }
 
@@ -955,8 +968,10 @@ public class DroidUIScrollView extends FrameLayout {
 
     @Override
     public boolean performAccessibilityAction(int action, Bundle arguments) {
-        if (super.performAccessibilityAction(action, arguments)) {
-            return true;
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+            if (super.performAccessibilityAction(action, arguments)) {
+                return true;
+            }
         }
         if (!isEnabled()) {
             return false;
@@ -1031,8 +1046,10 @@ public class DroidUIScrollView extends FrameLayout {
         event.setScrollable(scrollable);
         event.setScrollX(getScrollX());
         event.setScrollY(getScrollY());
-        event.setMaxScrollX(getScrollRangeHorizontal());
-        event.setMaxScrollY(getScrollRangeVertical());
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1){
+            event.setMaxScrollX(getScrollRangeHorizontal());
+            event.setMaxScrollY(getScrollRangeVertical());
+        }
     }
 
     private int getScrollRangeVertical() {
@@ -1425,7 +1442,11 @@ public class DroidUIScrollView extends FrameLayout {
 
             if (!awakenScrollBars()) {
                 // Keep on drawing until the animation has finished.
-                postInvalidateOnAnimation();
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                    postInvalidateOnAnimation();
+                }else{
+                    ViewCompat.postInvalidateOnAnimation(this);
+                }
             }
         }
     }
@@ -1808,7 +1829,11 @@ public class DroidUIScrollView extends FrameLayout {
                 canvas.translate(getPaddingLeft(), Math.min(0, scrollY));
                 mEdgeGlowTop.setSize(width, getHeight());
                 if (mEdgeGlowTop.draw(canvas)) {
-                    postInvalidateOnAnimation();
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                        postInvalidateOnAnimation();
+                    }else{
+                        ViewCompat.postInvalidateOnAnimation(this);
+                    }
                 }
                 canvas.restoreToCount(restoreCount);
             }
@@ -1822,7 +1847,11 @@ public class DroidUIScrollView extends FrameLayout {
                 canvas.rotate(180, width, 0);
                 mEdgeGlowBottom.setSize(width, height);
                 if (mEdgeGlowBottom.draw(canvas)) {
-                    postInvalidateOnAnimation();
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                        postInvalidateOnAnimation();
+                    }else{
+                        ViewCompat.postInvalidateOnAnimation(this);
+                    }
                 }
                 canvas.restoreToCount(restoreCount);
             }
@@ -1838,7 +1867,11 @@ public class DroidUIScrollView extends FrameLayout {
                 canvas.translate(-height + getPaddingTop(), Math.min(0, scrollX));
                 mEdgeGlowLeft.setSize(height, getWidth());
                 if (mEdgeGlowLeft.draw(canvas)) {
-                    postInvalidateOnAnimation();
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                        postInvalidateOnAnimation();
+                    }else{
+                        ViewCompat.postInvalidateOnAnimation(this);
+                    }
                 }
                 canvas.restoreToCount(restoreCount);
             }
@@ -1852,7 +1885,11 @@ public class DroidUIScrollView extends FrameLayout {
                         -(Math.max(getScrollRangeHorizontal(), scrollX) + width));
                 mEdgeGlowRight.setSize(height, width);
                 if (mEdgeGlowRight.draw(canvas)) {
-                    postInvalidateOnAnimation();
+                    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+                        postInvalidateOnAnimation();
+                    }else{
+                        ViewCompat.postInvalidateOnAnimation(this);
+                    }
                 }
                 canvas.restoreToCount(restoreCount);
             }
