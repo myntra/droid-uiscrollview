@@ -16,5 +16,5 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile 'com.greycellofp:DroidUIScrollView:1.0.0-SNAPSHOT'
+//    compile 'com.greycellofp:DroidUIScrollView:1.0.0-SNAPSHOT'
 }
