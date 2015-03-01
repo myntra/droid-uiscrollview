@@ -8,17 +8,17 @@ An attempt at a ScrollView that scrolls both vertically and horizontally. A UI w
 Add this in your project app's ```build.gradle```
 
 ```sh
+repositories {
+    maven {
+        url "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+    }
+}
+
 dependencies{
-    compile 'com.greycellofp:DroidUIScrollView:1.0.0-SNAPSHOT'
+    compile 'com.greycellofp:DroidUIScrollView:1.0.0'
 }
 ```
-###Build Caveat
-This is not published to a central repo yet, but you could build it locally and install to your local Maven repository
 
-```sh
-$ gradle installArchives
-```
-You'd have to first comment out the gradle dependency in the demo(app) module before you ```installArchives```
 ### Version
 1.0.0
 
@@ -28,8 +28,8 @@ PRs highly appreciated
 
 ### Todo's
 
- - Write Unit Tests
- - Publish to a central Maven Repository
+ - Write Uinit Tests
+ - ~~Publish to a central Maven Repository~~ (awaiting central sync)
  - Mimic iOS's Api for [UIScrollView] (or maybe not)
  - Add/Clean Code Comments
  - Implement Nested Scrolling support for [Lollipop]
