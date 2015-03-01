@@ -28,7 +28,7 @@ PRs highly appreciated
 
 ### Todo's
 
- - Write Uinit Tests
+ - Write Unit Tests
  - Publish to a central Maven Repository
  - Mimic iOS's Api for [UIScrollView] (or maybe not)
  - Add/Clean Code Comments
