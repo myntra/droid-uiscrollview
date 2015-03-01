@@ -1,6 +1,23 @@
 apply plugin: 'com.android.application'
 apply plugin: 'maven'
 
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url "https://oss.sonatype.org/service/local/staging/deploy/maven2"
+    }
+}
+
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
@@ -12,9 +29,12 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
-//    compile 'com.greycellofp:DroidUIScrollView:1.0.0-SNAPSHOT'
+    compile 'com.greycellofp:DroidUIScrollView:1.0.0'
 }

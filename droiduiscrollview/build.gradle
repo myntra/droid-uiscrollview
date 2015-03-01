@@ -8,8 +8,13 @@ android {
         minSdkVersion 14
         targetSdkVersion 21
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
 }
+
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
