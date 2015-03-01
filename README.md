@@ -1,6 +1,8 @@
 # Droid-UIScrollView
 **Note:** Still WIP!
 
+![DroidUIScrollView demo](https://raw.githubusercontent.com/myntra/droid-uiscrollview/master/app/images/droiduiscrollview-demo.gif)
+
 An attempt at a ScrollView that scrolls both vertically and horizontally. A UI widget that is readily available for iOS, aptly named [UIScrollView]
 
 ##Gradle Dependency
