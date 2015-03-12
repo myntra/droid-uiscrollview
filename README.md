@@ -26,7 +26,6 @@ PRs highly appreciated
 
  - Write Uinit Tests
  - ~~Publish to a central Maven Repository~~
- - Mimic iOS's Api for [UIScrollView] (or maybe not)
  - Add/Clean Code Comments
  - Implement Nested Scrolling support for [Lollipop]
  - Flags to switch On/Off Vertical/Horizontal scrolling
